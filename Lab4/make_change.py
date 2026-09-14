@@ -14,7 +14,7 @@
 pay = float(input("How much did you pay? "))
 cost = float(input("How much did it cost? "))
 change = float(pay - cost)
-print(f"You recieved ${change:.2f} in change. That is...")
+print(f"You received ${change:.2f} in change. That is...")
 
 cents = round(change * 100)
 
