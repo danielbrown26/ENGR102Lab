@@ -23,14 +23,14 @@ elif a_val == '1':
 elif a_val == '-1':
     a_plug = '- x^2'
 elif a_val < '0':
-    a_plug = (f' - {(int(a_val) * -1)}x^2')
+    a_plug = (f'- {(int(a_val) * -1)}x^2')
 else:
     a_plug = (f'{a_val}x^2')
 
 #this code decides if the first sign is + or - , or if it should be deleted altogether
-if b_val >= '0' and a_val != '0':
-    sign1 = '+'
-elif b_val < '0' and a_val != '0':
+if a_val >= '0' and a_val != '0' and b_val != '0':
+    sign1 = ' + '
+elif a_val < '0' and a_val != '0' and b_val != '0':
     sign1 = ''
 else:
     sign1 = ''
@@ -40,18 +40,18 @@ else:
 if b_val == '0':
     b_plug = ''
 elif b_val == '1':
-    b_plug = 'x^2'
+    b_plug = 'x'
 elif b_val == '-1':
-    b_plug = '- x^2'
+    b_plug = ' - x'
 elif b_val < '0':
     b_plug = (f' - {(int(b_val) * -1)}x')
 else:
     b_plug = (f'{b_val}x')
 
 #this code decides if the second sign is + or - , or if it should be deleted altogether
-if c_val >= '0' and a_val != '0':
-    sign2 = '+'
-elif c_val < '0' and a_val != '0':
+if c_val >= '0' and b_val != '0' and c_val != '0':
+    sign2 = ' + '
+elif c_val < '0' and b_val != '0' and c_val != '0':
     sign2 = ''
 else:
     sign2 = ''
@@ -61,15 +61,15 @@ else:
 if c_val == '0':
     c_plug = ''
 elif c_val == '1':
-    c_plug = 'x^2'
+    c_plug = '1'
 elif c_val == '-1':
-    c_plug = '- x^2'
+    c_plug = '- 1'
 elif c_val < '0':
-    c_plug = (f' - {(int(c_val) * -1)}x')
+    c_plug = (f' - {(int(c_val) * -1)}')
 else:
-    c_plug = (f'{c_val}x')
+    c_plug = (f'{c_val}')
 
 if a_val == '0' and b_val == '0' and c_val == '0':
-    print('The equation is 0 = 0')
+    print('The quadratic equation is 0 = 0')
 else:
-    print(f'The equation is {a_plug}{sign1}{b_plug}{sign2}{c_plug} = 0')
+    print(f'The quadratic equation is {a_plug}{sign1}{b_plug}{sign2}{c_plug} = 0')
