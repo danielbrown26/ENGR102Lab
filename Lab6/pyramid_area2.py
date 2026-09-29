@@ -14,8 +14,8 @@
 sidel = float(input('Enter the side length in meters: '))
 layers = float(input('Enter the number of layers: '))
 
-cube = sidel ** 2 #area of each cube
-sumn = (layers * (layers + 1)) / 2 #this just sums up the number of layers put together
+cube = sidel ** 2 # area of each cube
+sumn = (layers * (layers + 1)) / 2 # this just sums up the number of layers put together
 area = (sumn * 4 * cube) + (layers ** 2 * cube)
 ''' technically each bottom side negates the are of the top side above it,
     so by squaring only the last are you can account for all the areas above it
