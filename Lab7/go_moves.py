@@ -11,37 +11,35 @@
 # Date: 5 October 2026
 #
 
-board_dict = {}
 rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+board = []
+for _ in range(9):
+    row = []
+    for _ in range(9):
+        row.append(".")
+    board.append(row)
 white_turn = False
-for x in range(81):
-    board_dict[f"{rows[x//9]}{(x%9)+1}"] = '.'
+
 def print_board():
-    counter = 0
-    for x in board_dict.keys():
-        counter += 1
-        if counter % 9 != 0:
-            print(board_dict[x], end="")
-        else:
-            print(board_dict[x], end="\n")
+    for row in board:
+        print("".join(row))
 
 while True:
     print_board()
     if not white_turn:
         placement = input("It is black's turn. Please enter your selection as a letter\nfor the row and number for the column such as 'A1'\nfor the first place\n").upper()
-        try:
-            if board_dict[placement] == '.':
-                board_dict[placement] = chr(9679)
-                white_turn = True
-        except KeyError:
-            pass
     else:
         placement = input("It is white's turn. Please enter your selection as a letter\nfor the row and number for the column such as 'A1'\nfor the first place\n").upper()
-        try:
-            if board_dict[placement] == '.':
-                board_dict[placement] = chr(9675)
-                white_turn = False
-        except KeyError:
-            pass
+
+    if len(placement) == 2 and placement[0] in rows and placement[1] in "123456789":
+        row_index = rows.index(placement[0])
+        column_index = int(placement[1]) - 1
+        if board[row_index][column_index] == ".":
+            if white_turn:
+                board[row_index][column_index] = chr(9675)
+            else:
+                board[row_index][column_index] = chr(9679)
+            white_turn = not white_turn
+
     if placement == "STOP":
         break
