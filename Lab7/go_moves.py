@@ -10,12 +10,13 @@
 # Assignment: Lab 7 team
 # Date: 5 October 2026
 #
+import os
 
 rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 board = []
-for _ in range(9):
+for x in range(9):
     row = []
-    for _ in range(9):
+    for y in range(9):
         row.append(".")
     board.append(row)
 white_turn = False
@@ -40,6 +41,8 @@ while True:
             else:
                 board[row_index][column_index] = chr(9679)
             white_turn = not white_turn
+        else:
+            print("Please place in an open space")
 
     if placement == "STOP":
         break
