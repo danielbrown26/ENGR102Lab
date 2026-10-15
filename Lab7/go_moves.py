@@ -16,7 +16,7 @@ rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
 board = []
 for x in range(9):
     row = []
-    for y in range(9):
+    for y in range(9):     ##### The Board Format ######
         row.append(".")
     board.append(row)
 white_turn = False
