@@ -204,7 +204,6 @@ def game_loop():
         # Runs the game
         blackJack()
     elif game_selection == "3":
-        import random
         import time
         movies_easy = {
             "Who played Jack in Titanic?": ["1) Brad Pitt", "2) Leonardo DiCaprio", "3) Tom Cruise", "4) Matt Damon",
