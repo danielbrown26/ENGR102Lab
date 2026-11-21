@@ -27,9 +27,9 @@ y2 = x**2 / (4*6)
 # create figure
 plt.figure()
 
-# plot both parablolas
+# plot both parabolas
 plt.plot(x, y1, color='red', linewidth=2, label='f = 2')
-plt.plot(x, y2, color='blue', linewidth=2, label='f = 6')
+plt.plot(x, y2, color='blue', linewidth=6, label='f = 6')
 
 # add titel and labels
 plt.title('Parabolas with Different Focal Lengths')
@@ -57,8 +57,8 @@ plt.plot(x, y, 'ro', label='Cubic Polynomial')
 
 # add title and labels
 plt.title('Cubic Polynomial')
-plt.xlabel('x')
-plt.ylabel('y')
+plt.xlabel('x values')
+plt.ylabel('y values')
 
 # add legend
 plt.legend()
